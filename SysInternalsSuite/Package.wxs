@@ -1,0 +1,28 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package Name="$(ProductName)" Manufacturer="$(ProductManufacturerLongname)" Version="$(ProductVersion)" UpgradeCode="8969041b-0e03-4fd4-b1ba-2c8ef679c68b">
+		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+		<MediaTemplate EmbedCab="yes" />
+
+		<!-- Don't allow Modify from Installed Apps -->
+		<Property Id="ARPNOMODIFY" Value="yes" Secure="yes" />
+		<Icon Id="windowslogo.ico" SourceFile="..\resources\windows_logo_icon_132880.ico"/>
+		<Property Id="ARPPRODUCTICON" Value="windowslogo.ico" />
+
+
+		<Feature Id="SysInternalsSuite" Title="SysInternals Suite" Level="1" AllowAdvertise="no" InstallDefault="local" TypicalDefault="install" AllowAbsent="no">
+			<ComponentGroupRef Id="SysInternalsComponents" />
+			<ComponentGroupRef Id="EnvironmentChanges" />
+		</Feature>
+
+	</Package>
+
+	<Fragment>
+		<ComponentGroup Id="EnvironmentChanges" Directory="TARGETDIR">
+			<Component Id="SystemPathUpdate" Guid="{1EA3AF8F-827D-4C33-A4F9-F6D4E46FE002}">
+				<!-- add to the system path -->
+				<Environment Id="SYSINTERNALSSUITEPATH" Name="PATH" Value="[INSTALLFOLDER]" Permanent="no" Part="last" Action="set" System="yes" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+</Wix>

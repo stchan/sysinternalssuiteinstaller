@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>
+		<Company>Microsoft</Company>
+		<CompanyLongname>Microsoft Corporation</CompanyLongname>
+		<Copyright>Copyright © 2024</Copyright>
+		<AssemblyTrademark></AssemblyTrademark>
+		<AssemblyCulture></AssemblyCulture>
+		<ProductVersion>0.1.0</ProductVersion>
+		<ProductName>SysInternals Suite</ProductName>
+	</PropertyGroup>
+</Project>
