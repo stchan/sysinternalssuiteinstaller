@@ -19,24 +19,24 @@
 	  indent="yes"
     />
 
-	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\sqldeveloper.exe")]'>
+	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\AccessEnum.exe")]'>
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()"/>
 			<Shortcut
-			  Id="SqlDeveloperExeShortcut"
-			  Name="SQL Developer"
+			  Id="AccessEnumexeShortcut"
+			  Name="AccessEnum"
 			  Directory="ProgramMenuDir"
 			  Advertise="yes"
-			  Icon="sqldeveloper.exe"
+			  Icon="AccessEnum.exe"
 			  WorkingDirectory="INSTALLFOLDER">
 			</Shortcut>
 			<RemoveFolder
-			  Id="SqlDeveloperExeShortcut"
+			  Id="AccessEnumexeShortcut"
 			  Directory="ProgramMenuDir"
 			  On="uninstall" />
 		</xsl:copy>
 	</xsl:template>
-	<!-- Add a never true condition for the .gitkeep file - we are doing this instead of removing it, because the ComponentRef element in the "SqlDeveloperComponents" ComponentGroup also has to be removed -->
+	<!-- Add a never true condition for the .gitkeep file - we are doing this instead of removing it, because the ComponentRef element in the "SysInternalsComponents" ComponentGroup also has to be removed -->
 	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\.gitkeep")]'>
 		<xsl:copy>
 			<xsl:attribute name="Condition">1 = 0</xsl:attribute>

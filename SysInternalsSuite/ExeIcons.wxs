@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+	  <Icon Id="AccessEnum.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\AccessEnum.exe"/>
+	  <Icon Id="ADInsight64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\ADInsight64.exe"/>
+	  <Icon Id="Autologon64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Autologon64.exe"/>
+	  <Icon Id="Autoruns64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Autoruns64.exe"/>
+	  <Icon Id="Bginfo64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Bginfo64.exe"/>
+	  <Icon Id="Cacheset64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Cacheset64.exe"/>
+	  <Icon Id="CPUSTRES64.EXE" SourceFile="$(SolutionDir)harvest\$(Platform)\CPUSTRES64.EXE"/>
+	  <Icon Id="dbgview64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\dbgview64.exe"/>
+	  <Icon Id="Desktops64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Desktops64.exe"/>
+	  <Icon Id="disk2vhd64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\disk2vhd64.exe"/>
+	  <Icon Id="Diskmon64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Diskmon64.exe"/>
+	  <Icon Id="DiskView64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\DiskView64.exe"/>
+	  <Icon Id="LoadOrd64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\LoadOrd64.exe"/>
+	  <Icon Id="notmyfault64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\notmyfault64.exe"/>
+	  <Icon Id="procexp64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\procexp64.exe"/>
+	  <Icon Id="Procmon64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Procmon64.exe"/>
+	  <Icon Id="RAMMap64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\RAMMap64.exe"/>
+	  <Icon Id="RDCMan.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\RDCMan.exe"/>
+	  <Icon Id="ShareEnum64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\ShareEnum64.exe"/>
+	  <Icon Id="ShellRunas.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\ShellRunas.exe"/>
+	  <Icon Id="tcpview64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\tcpview64.exe"/>
+	  <Icon Id="vmmap64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\vmmap64.exe"/>
+	  <Icon Id="Winobj64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\Winobj64.exe"/>
+	  <Icon Id="ZoomIt64.exe" SourceFile="$(SolutionDir)harvest\$(Platform)\ZoomIt64.exe"/>
+  </Fragment>
+</Wix>

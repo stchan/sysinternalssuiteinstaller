@@ -3,9 +3,8 @@
 	<Fragment>
 		<DirectoryRef Id="ProgramMenuDir">
 			<Component Id="ProgramMenuDir" Guid="{90C9062F-0EE1-400F-9088-17C2E3A440C0}">
-				<CreateFolder />
-				<RemoveFolder Id="ProgramMenuDir" On="uninstall" />
 				<RegistryValue Root="HKMU" Key="Software\$(ProductManufacturer)\$(ProductName)" Name="ProgramMenuDir" Type="string" Value="[ProgramMenuDir]" KeyPath="yes" />
+				<RemoveFolder Id="ProgramMenuDir" On="uninstall" />
 			</Component>
 		</DirectoryRef>
 	</Fragment>
