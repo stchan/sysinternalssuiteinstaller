@@ -19,6 +19,7 @@
 	  indent="yes"
     />
 
+	<!-- Add shortcuts for the GUI applications -->
 	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\AccessEnum.exe")]'>
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()"/>
@@ -36,6 +37,42 @@
 			  On="uninstall" />
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\ADInsight64.exe")]'>
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()"/>
+			<Shortcut
+			  Id="ADInsight64exeShortcut"
+			  Name="ADInsight64"
+			  Directory="ProgramMenuDir"
+			  Advertise="yes"
+			  Icon="ADInsight64.exe"
+			  WorkingDirectory="INSTALLFOLDER">
+			</Shortcut>
+			<RemoveFolder
+			  Id="ADInsight64exeShortcut"
+			  Directory="ProgramMenuDir"
+			  On="uninstall" />
+		</xsl:copy>
+	</xsl:template>
+	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\Autologon64.exe")]'>
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()"/>
+			<Shortcut
+			  Id="Autologon64exeShortcut"
+			  Name="Autologon64"
+			  Directory="ProgramMenuDir"
+			  Advertise="yes"
+			  Icon="Autologon64.exe"
+			  WorkingDirectory="INSTALLFOLDER">
+			</Shortcut>
+			<RemoveFolder
+			  Id="Autologon64exeShortcut"
+			  Directory="ProgramMenuDir"
+			  On="uninstall" />
+		</xsl:copy>
+	</xsl:template>
+
+
 	<!-- Add a never true condition for the .gitkeep file - we are doing this instead of removing it, because the ComponentRef element in the "SysInternalsComponents" ComponentGroup also has to be removed -->
 	<xsl:template match='wix:Component[contains(wix:File/@Source, "$(var.SysInternalsSuiteHarvestFolder)\.gitkeep")]'>
 		<xsl:copy>
