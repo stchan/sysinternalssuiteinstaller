@@ -1,9 +1,28 @@
 ﻿<Project Sdk="WixToolset.Sdk/5.0.2">
-	<PropertyGroup>
-		<OutputName>SysInternalsSuite_$(ProductVersion)_$(Platform)</OutputName>
-		<Platforms>x64;ARM64</Platforms>
-	</PropertyGroup>
-	<PropertyGroup Label="Globals">
-		<DefineConstants>ProductVersion=$(ProductVersion);ProductManufacturer=$(Company);ProductName=$(ProductName);ProductManufacturerLongname=$(CompanyLongname)</DefineConstants>
-	</PropertyGroup>
+  <PropertyGroup>
+    <OutputName>SysInternalsSuite_$(ProductVersion)_$(Platform)</OutputName>
+    <Platforms>x64;ARM64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <DefineConstants>ProductVersion=$(ProductVersion);ProductManufacturer=$(Company);ProductName=$(ProductName);ProductManufacturerLongname=$(CompanyLongname);SysInternalsSuiteHarvestFolder=$(SolutionDir)harvest\$(Platform)</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <HarvestDirectory Include="$(SolutionDir)harvest\$(Platform)">
+      <ComponentGroupName>SysInternalsComponents</ComponentGroupName>
+      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+      <KeepEmptyDirectories>true</KeepEmptyDirectories>
+      <PreprocessorVariable>var.SysInternalsSuiteHarvestFolder</PreprocessorVariable>
+      <SuppressCom>true</SuppressCom>
+      <SuppressRegistry>true</SuppressRegistry>
+      <SuppressRootDirectory>true</SuppressRootDirectory>
+      <Transforms>SysInternalsSuite.xslt</Transforms>
+      <HarvestDirectoryVerboseOutput>true</HarvestDirectoryVerboseOutput>
+    </HarvestDirectory>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SysInternalsSuite.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
+  </ItemGroup>
 </Project>

@@ -1,7 +1,13 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Fragment>
-    <StandardDirectory Id="ProgramFiles6432Folder">
-      <Directory Id="INSTALLFOLDER" Name="$(ProductManufacturer) !(bind.Property.ProductName)" />
-    </StandardDirectory>
-  </Fragment>
+	<Fragment>
+		<!-- Installation folder -->
+		<StandardDirectory Id="ProgramFiles6432Folder">
+			<Directory Id="INSTALLFOLDER" Name="$(ProductManufacturer) !(bind.Property.ProductName)" />
+		</StandardDirectory>
+		<!-- Program menu folder -->
+		<StandardDirectory Id="ProgramMenuFolder">
+			<Directory Id="ProgramMenuDir" Name="$(ProductName)" >
+			</Directory>
+		</StandardDirectory>
+	</Fragment>
 </Wix>

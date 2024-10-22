@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Fragment>
+		<DirectoryRef Id="ProgramMenuDir">
+			<Component Id="ProgramMenuDir" Guid="{90C9062F-0EE1-400F-9088-17C2E3A440C0}">
+				<CreateFolder />
+				<RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+				<RegistryValue Root="HKMU" Key="Software\$(ProductManufacturer)\$(ProductName)" Name="ProgramMenuDir" Type="string" Value="[ProgramMenuDir]" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="EnvironmentChanges" Directory="TARGETDIR">
+			<Component Id="SystemPathUpdate" Guid="{1EA3AF8F-827D-4C33-A4F9-F6D4E46FE002}">
+				<!-- add to the system path -->
+				<Environment Id="SYSINTERNALSSUITEPATH" Name="PATH" Value="[INSTALLFOLDER]" Permanent="no" Part="last" Action="set" System="yes" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+
+</Wix>
