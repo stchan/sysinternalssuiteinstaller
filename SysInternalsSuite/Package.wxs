@@ -1,14 +1,17 @@
-﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
 	<Package Name="$(ProductName)" Manufacturer="$(ProductManufacturer)" Version="$(ProductVersion)" UpgradeCode="8969041b-0e03-4fd4-b1ba-2c8ef679c68b" Scope="perMachine">
 		<SummaryInformation Description="$(ProductName) $(ProductVersion)" Manufacturer="$(ProductManufacturerLongname)"/>
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" AllowSameVersionUpgrades="no" />
 		<MediaTemplate EmbedCab="yes" />
 
-		<!-- Don't allow Modify from Installed Apps -->
+		<!-- Don't allow Modify from Installed Apps 
 		<Property Id="ARPNOMODIFY" Value="yes" Secure="yes" />
+		-->
 		<Icon Id="windowslogo.ico" SourceFile="..\resources\windows_logo_icon_132880.ico"/>
 		<Property Id="ARPPRODUCTICON" Value="windowslogo.ico" />
 
+		<WixVariable Id="WixUILicenseRtf" Value="sysinternalseula.rtf" />
+		<ui:WixUI Id="WixUI_Minimal" />
 
 		<Feature Id="SysInternalsSuite" Title="SysInternals Suite" Level="1" AllowAdvertise="no" InstallDefault="local" TypicalDefault="install" AllowAbsent="no">
 			<ComponentGroupRef Id="SysInternalsComponents" />
