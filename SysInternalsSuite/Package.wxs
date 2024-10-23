@@ -12,6 +12,7 @@
 
 		<WixVariable Id="WixUILicenseRtf" Value="sysinternalseula.rtf" />
 		<ui:WixUI Id="WixUI_Minimal" />
+		<UIRef Id="WixUI_ErrorProgressText" />
 
 		<Feature Id="SysInternalsSuite" Title="SysInternals Suite" Level="1" AllowAdvertise="no" InstallDefault="local" TypicalDefault="install" AllowAbsent="no">
 			<ComponentGroupRef Id="SysInternalsComponents" />
