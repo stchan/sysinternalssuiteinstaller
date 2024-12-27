@@ -5,7 +5,7 @@
 		<Copyright>Copyright © 2024</Copyright>
 		<AssemblyTrademark></AssemblyTrademark>
 		<AssemblyCulture></AssemblyCulture>
-		<ProductVersion>24.07.23</ProductVersion>
+		<ProductVersion>24.12.16</ProductVersion>
 		<ProductName>SysInternals Suite (MSI)</ProductName>
 	</PropertyGroup>
 </Project>
