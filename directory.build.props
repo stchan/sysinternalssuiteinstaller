@@ -2,10 +2,10 @@
 	<PropertyGroup>
 		<Company>Microsoft</Company>
 		<CompanyLongname>Microsoft Corporation</CompanyLongname>
-		<Copyright>Copyright © 2024</Copyright>
+		<Copyright>Copyright © 2025</Copyright>
 		<AssemblyTrademark></AssemblyTrademark>
 		<AssemblyCulture></AssemblyCulture>
-		<ProductVersion>24.12.16</ProductVersion>
+		<ProductVersion>25.02.13</ProductVersion>
 		<ProductName>SysInternals Suite (MSI)</ProductName>
 	</PropertyGroup>
 </Project>
